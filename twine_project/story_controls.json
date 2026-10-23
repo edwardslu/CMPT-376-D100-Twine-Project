@@ -2,161 +2,167 @@
   {
     "name": "Start",
     "title": "Just One More Delivery",
-    "body": "",
-    "links": "[[Begin the story->Graduation]]\n[[Picture and sound references->Credits]]",
+    "body": "<p class=\"deck\">An interactive story about subscription design, workplace pressure, and professional responsibility.</p><p>You play as <strong>Alex</strong>, a recent graduate starting work at <strong>Amaze</strong>, a fictional online store. Your manager needs more repeat customers. Your customers need to understand what they are choosing.</p><div class=\"callout\"><strong>How to play</strong><p>Read each scene and choose an action. There is no timer or score. Different choices reveal different consequences. Sound is optional; use the control above.</p></div><div class=\"credits-mini\"><strong>CMPT 376W G1 · Team 24</strong><p>Edward Lu<br>Oak Soe Khant<br>Wonchan Kim</p><p>Inspired by the ACM Dark UX Patterns case study. All characters, company events, prices, and legal proceedings in this story are fictional.</p></div>",
+    "links": "[[Begin the story->Graduation]]\n[[Media and project credits->Credits]]",
     "scene": "graduation",
-    "chapter": "",
-    "code": "(set: $raisedConcern to false)\n(set: $clearDesign to false)",
-    "tags": ""
+    "chapter": "01 / INTRODUCTION",
+    "code": "(set: $route to \"undecided\")\n(set: $raisedConcern to false)\n(set: $clearDesign to false)",
+    "tags": "",
+    "position": "25,25"
   },
   {
     "name": "Graduation",
-    "title": "The offer",
-    "body": "",
-    "links": "[[Meet Morgan and see your first project->FirstProject]]",
+    "title": "A place to start",
+    "body": "<p>You have recently graduated and have been applying for jobs for several months. When Amaze offers you a junior developer position, the salary and stability feel like a doorway into the life you worked for.</p><p>On your first morning, Morgan, your software-development manager, walks you through the office.</p><blockquote>“We move quickly here. Show us you can deliver, and there’s room to grow.”</blockquote><p>You need this job to pay rent, your family is proud, and you want to prove that Amaze made the right choice.</p>",
+    "links": "[[Meet Morgan and review your first project->FirstProject]]",
     "scene": "graduation",
-    "chapter": "",
+    "chapter": "02 / GRADUATION & EMPLOYMENT",
     "code": "",
-    "tags": ""
+    "tags": "",
+    "position": "175,25"
   },
   {
     "name": "FirstProject",
     "title": "A discount, already selected",
-    "body": "",
-    "links": "[[Accept the project without raising an objection->Implementation]]\n[[Question the design and discuss the customer risks->Debate]]\n[[Refuse to build this checkout->BadEnding1]]",
+    "body": "<p>Morgan opens the checkout for a $22 pack of household supplies. A green badge offers the same pack for <strong>$18 with Subscribe & Save</strong>.</p><p>The subscription option is selected before the customer touches the page. Smaller text says the item will arrive every month until cancelled.</p><div class=\"checkout\" aria-label=\"Fictional checkout illustration\"><span class=\"mini-label\">AMAZE · CHECKOUT PREVIEW</span><strong>Household essentials</strong><div class=\"price\">$18 <small>with Subscribe & Save</small></div><div class=\"selected-option\">☑ Monthly subscription selected</div><p>$18 each delivery · repeats every month</p><div class=\"fake-button\">Continue</div><span class=\"muted\">One-time purchase: $22</span></div><blockquote>“Keep the subscription selected,” Morgan says. “Repeat orders make revenue predictable. That helps protect everyone’s jobs.”</blockquote><p>You ask whether customers will understand that the discount begins a recurring order. Morgan points at the terms.</p><blockquote>“It’s written there. This is standard optimization.”</blockquote>",
+    "links": "[[Accept without hesitation->Implementation]]\n[[Discuss the customer risks with Morgan->Debate]]\n[[Reject the project->BadEnding1]]",
     "scene": "office",
-    "chapter": "",
+    "chapter": "03 / FIRST PROJECT",
     "code": "",
-    "tags": ""
+    "tags": "",
+    "position": "325,25"
   },
   {
     "name": "Debate",
-    "title": "\u201cIt\u2019s a choice they can change\u201d",
-    "body": "",
-    "links": "[[Take the smaller project while keeping your concern on record->SmallerProject]]\n[[Agree to implement Sub and Save after the discussion->Implementation]]",
+    "title": "“It’s a choice they can change”",
+    "body": "<p>You explain that a customer may notice the immediate discount but overlook the monthly commitment. Choosing a delivery frequency for someone is different from asking what they need.</p><p>Morgan listens, but does not agree.</p><blockquote>“Subscriptions can help people who rely on deliveries, including customers who find shopping in person difficult. We give them convenience and a lower price.”</blockquote><p>You agree that subscriptions can be useful, but argue that usefulness does not justify hiding the commitment.</p><blockquote>“You’re new,” Morgan says. “Take a smaller project for now. We’ll revisit this.”</blockquote>",
+    "links": "[[Take the smaller project->SmallerProject]]",
     "scene": "office",
-    "chapter": "",
+    "chapter": "03 / DISCUSS THE REQUEST",
     "code": "(set: $raisedConcern to true)",
-    "tags": ""
+    "tags": "",
+    "position": "325,175"
   },
   {
     "name": "SmallerProject",
     "title": "The request returns",
-    "body": "",
+    "body": "<p>You spend the next two weeks fixing product-page bugs. The work is useful, but Morgan repeatedly asks when you will take on Subscribe & Save.</p><blockquote>“We need people who take ownership,” Morgan says during your check-in. “If you won’t do it, another developer can. Or someone can use an AI tool to draft the code.”</blockquote><p>Your refusal alone will not prevent the launch. Agreeing may give you some influence over implementation, but Morgan still wants the same default.</p><p>You must answer.</p>",
     "links": "[[Relent and agree to implement it->Implementation]]\n[[Refuse the request again->BadEnding2]]",
     "scene": "office",
-    "chapter": "",
+    "chapter": "04 / SMALLER PROJECT",
     "code": "",
-    "tags": ""
+    "tags": "",
+    "position": "475,175"
   },
   {
     "name": "Implementation",
     "title": "The numbers look good",
-    "body": "",
-    "links": "[[Implement the harder cancellation process->HardCancellation]]\n[[Refuse to add cancellation barriers->BadEnding2]]",
+    "body": "<p>You build the checkout. Subscribe & Save is selected by default and the delivery interval begins at one month.</p><p>Before release, Jamie, a volunteer customer, tries the design.</p><blockquote>“Eighteen dollars for this order. That works for me.”</blockquote><p>When the researcher asks about the next delivery, Jamie pauses.</p><blockquote>“Next delivery? I only wanted one.”</blockquote><p>You share the result with Morgan. Morgan proceeds, saying customers can change the settings. After launch, recurring orders increase and Morgan praises your speed. Then comes another request.</p><blockquote>“The higher-ups want better retention. Put cancellation deeper in account settings. Make customers open each subscription separately.”</blockquote><p>You now have direct evidence that some customers misunderstand the commitment.</p>",
+    "links": "[[Implement the harder cancellation process->HardCancellation]]\n[[Refuse to add cancellation barriers->BadEnding2]]\n[[Propose an ethical redesign backed by the customer test->EthicalRedesign]]",
     "scene": "office",
-    "chapter": "",
-    "code": "",
-    "tags": "typing"
+    "chapter": "05 / IMPLEMENT SUBSCRIBE & SAVE",
+    "code": "(set: $route to \"implementation\")",
+    "tags": "typing",
+    "position": "625,25"
   },
   {
     "name": "HardCancellation",
     "title": "Easy to enter. Hard to leave.",
-    "body": "",
+    "body": "<p>You move cancellation away from the edit-subscription screen. Customers can change quantity and frequency there, but must open each item individually to stop deliveries.</p><p>The monthly default remains. Morgan calls the lower cancellation rate an improvement.</p><p>Jamie receives another pack. On the account page, he changes the quantity before realizing that doing so does not stop the subscription. He opens another menu, then another.</p><blockquote>“Why can’t I just cancel this?”</blockquote><p>The company reports better retention, but Jamie has paid for an order he did not want.</p>",
     "links": "[[Continue to the consequences->Lawsuit]]",
     "scene": "deliveries",
-    "chapter": "",
-    "code": "",
-    "tags": "typing"
+    "chapter": "05 / HARDER CANCELLATION",
+    "code": "(set: $route to \"harmful\")",
+    "tags": "",
+    "position": "775,25"
   },
   {
     "name": "Lawsuit",
-    "title": "Amaze faces scrutiny",
-    "body": "",
-    "links": "[[Join the review->ProductReview]]",
+    "title": "Amaze faces a consumer-protection lawsuit",
+    "body": "<p>Months later, customer complaints become impossible to dismiss. People describe accidental subscriptions, repeated charges, and a cancellation process designed to wear them down.</p><p>A consumer-protection agency files a lawsuit alleging that Amaze used deceptive subscription practices. The company must preserve records, issue refunds, and defend decisions that once looked successful on a retention dashboard.</p><blockquote>“We measured how many people stayed,” Morgan says quietly. “We never measured how many felt trapped.”</blockquote><p>Alex realizes that implementing a requirement does not erase professional responsibility for its foreseeable harm.</p>",
+    "links": "[[See Jamie’s experience->EpilogueBad]]",
     "scene": "rain",
-    "chapter": "",
-    "code": "",
-    "tags": ""
+    "chapter": "07 / CONSUMER-PROTECTION LAWSUIT",
+    "code": "(set: $route to \"lawsuit\")\n(set: $clearDesign to false)",
+    "tags": "",
+    "position": "925,25"
   },
   {
-    "name": "ProductReview",
-    "title": "What should change?",
-    "body": "",
-    "links": "[[Recommend explicit choice, remembered settings, and one-step cancellation->ClearRedesign]]\n[[Recommend wording changes while keeping the existing behavior->LimitedRedesign]]",
-    "scene": "office",
-    "chapter": "",
-    "code": "",
-    "tags": ""
-  },
-  {
-    "name": "ClearRedesign",
+    "name": "EthicalRedesign",
     "title": "Make the commitment clear",
-    "body": "",
-    "links": "[[See Jamie\u2019s experience->Epilogue]]",
+    "body": "<p>You propose a redesign built around informed choice rather than accidental retention:</p><ul><li>One-time purchase and Subscribe & Save receive equal visual weight.</li><li>No option is preselected.</li><li>The price, delivery interval, and recurring commitment appear beside the choice.</li><li>Customers can cancel any subscription in one clear step.</li></ul><p>You present Jamie’s test result and recommend measuring comprehension, complaints, refunds, and cancellation time alongside conversion.</p><p>Morgan worries that enrolment will fall, but agrees to a controlled customer test. The redesign produces fewer accidental sign-ups and far fewer complaints. Leadership approves it.</p><blockquote>“Trust is also a business metric,” you say.</blockquote>",
+    "links": "[[See Jamie’s experience->EpilogueGood]]",
     "scene": "office",
-    "chapter": "",
-    "code": "(set: $clearDesign to true)",
-    "tags": "typing"
-  },
-  {
-    "name": "LimitedRedesign",
-    "title": "The same route, new wording",
-    "body": "",
-    "links": "[[See Jamie\u2019s experience->Epilogue]]",
-    "scene": "office",
-    "chapter": "",
-    "code": "(set: $clearDesign to false)",
-    "tags": ""
+    "chapter": "06 / ETHICAL REDESIGN PROPOSAL",
+    "code": "(set: $route to \"ethical\")\n(set: $clearDesign to true)",
+    "tags": "typing",
+    "position": "775,175"
   },
   {
     "name": "BadEnding1",
-    "title": "Back to the job search",
-    "body": "",
-    "links": "[[See the customer impact->Epilogue]]\n[[Start again->Start]]",
+    "title": "Bad Ending 1: Back to the job search",
+    "body": "<p>You refuse the project immediately and tell Morgan that you will not work on subscription features.</p><p>Morgan records that you declined your first major assignment without proposing an alternative or documenting the specific risks. During your probationary review, Amaze ends your employment.</p><p>Your concern about customers was valid, but the way you raised it gave the team no practical path forward. You leave the office with your badge in an envelope and begin applying for jobs again.</p>",
+    "links": "[[Start again and try another approach->Start]]\n[[Review the ACM connections->Ethics]]",
     "scene": "rain",
-    "chapter": "",
-    "code": "(set: $clearDesign to false)\n(set: $raisedConcern to true)",
-    "tags": ""
+    "chapter": "BAD ENDING 1",
+    "code": "(set: $route to \"bad1\")\n(set: $raisedConcern to true)\n(set: $clearDesign to false)",
+    "tags": "",
+    "position": "325,325"
   },
   {
     "name": "BadEnding2",
-    "title": "A place on the sidelines",
-    "body": "",
-    "links": "[[See the customer impact->Epilogue]]\n[[Start again->Start]]",
+    "title": "Bad Ending 2: A place on the sidelines",
+    "body": "<p>You refuse the request again. Morgan assigns Subscribe & Save to another developer and moves you to low-priority maintenance work.</p><p>Your concerns are not included in the project record, the harmful design still launches, and your performance review describes you as reluctant to take ownership. Months later, during a team restructuring, your position is eliminated.</p><p>You protected your conscience, but without evidence, allies, or a workable alternative, you could not protect the customers or your role.</p>",
+    "links": "[[Start again and try another approach->Start]]\n[[Review the ACM connections->Ethics]]",
     "scene": "rain",
-    "chapter": "",
-    "code": "(set: $clearDesign to false)\n(set: $raisedConcern to true)",
-    "tags": ""
+    "chapter": "BAD ENDING 2",
+    "code": "(set: $route to \"bad2\")\n(set: $raisedConcern to true)\n(set: $clearDesign to false)",
+    "tags": "",
+    "position": "625,325"
   },
   {
-    "name": "Epilogue",
-    "title": "Jamie\u2019s next order",
-    "body": "(if: $clearDesign is true)[<h2>Ending: Jamie can choose and cancel easily</h2>](else:)[<h2>Ending: Jamie receives another unwanted order</h2>]",
-    "links": "[[Play again and explore another path->Start]]\n[[Read the ACM connections->Ethics]]\n[[Picture and sound references->Credits]]",
+    "name": "EpilogueGood",
+    "title": "Epilogue A: Jamie stays in control",
+    "body": "<p>Jamie returns to Amaze to reorder household supplies. The page clearly separates <strong>One-time purchase</strong> from <strong>Subscribe & Save</strong>, with no default selected.</p><p>Jamie chooses the subscription after reading the delivery interval and later changes preferences from a single account screen. When the product is no longer needed, cancellation takes one click and produces an immediate confirmation.</p><blockquote>“That was easy,” Jamie says.</blockquote><p>Amaze earns a repeat customer without taking away the customer’s ability to choose.</p><div class=\"callout\"><strong>Good Ending</strong><p>Alex used customer evidence to propose a practical design that supports both user autonomy and sustainable business goals.</p></div>",
+    "links": "[[Read the ACM connections->Ethics]]\n[[Play again and explore another path->Start]]\n[[View media and project credits->Credits]]",
     "scene": "deliveries",
-    "chapter": "",
+    "cue": "success",
+    "chapter": "EPILOGUE A / GOOD ENDING",
     "code": "",
-    "tags": ""
+    "tags": "",
+    "position": "925,175"
+  },
+  {
+    "name": "EpilogueBad",
+    "title": "Epilogue B: Jamie cannot find the exit",
+    "body": "<p>Jamie opens the subscriptions page after receiving another unwanted delivery. The main screen allows quantity and frequency changes but provides no cancellation button.</p><p>After searching through several menus, Jamie finally finds cancellation inside the individual product page. A warning asks for confirmation, then offers another discount. Meanwhile, the next order has already been charged.</p><blockquote>“I never meant to sign up for this,” Jamie says while requesting a refund.</blockquote><p>Amaze gained a short-term repeat order and lost the customer’s trust.</p><div class=\"callout\"><strong>Bad Epilogue</strong><p>The design met its retention target by making exit difficult. The lawsuit shows why success metrics must include foreseeable harm, informed consent, and user control.</p></div>",
+    "links": "[[Read the ACM connections->Ethics]]\n[[Play again and explore another path->Start]]\n[[View media and project credits->Credits]]",
+    "scene": "deliveries",
+    "chapter": "EPILOGUE B / CUSTOMER IMPACT",
+    "code": "",
+    "tags": "",
+    "position": "1075,25"
   },
   {
     "name": "Ethics",
     "title": "Professional responsibility",
-    "body": "",
-    "links": "[[Return to Jamie\u2019s epilogue->Epilogue]]\n[[Start a fresh playthrough->Start]]",
+    "body": "<p>The story connects design decisions to the ACM Code of Ethics:</p><ul><li><strong>1.1 — Contribute to society and human well-being:</strong> Product goals should account for the people affected by the system.</li><li><strong>1.2 — Avoid harm:</strong> Accidental subscriptions, wasted money, and obstructed cancellation are foreseeable harms.</li><li><strong>1.3 — Be honest and trustworthy:</strong> A recurring commitment should be clear at the moment of choice.</li><li><strong>2.7 — Foster public awareness and understanding of computing:</strong> Teams should help customers understand how automated subscription defaults and cancellation flows affect their choices.</li><li><strong>3.1 — Keep the public good central:</strong> Leaders and developers share responsibility for measuring more than conversion and retention.</li></ul><p>Alex’s strongest response is not silent compliance or unsupported refusal. It is to identify the risk, collect evidence, explain the system’s effects clearly, propose a workable alternative, and keep user autonomy visible in the decision.</p><p><a href=\"https://www.acm.org/code-of-ethics\" target=\"_blank\" rel=\"noopener\">Read the ACM Code of Ethics</a></p>",
+    "links": "[[Start a fresh playthrough->Start]]\n[[View media and project credits->Credits]]",
     "scene": "office",
-    "chapter": "",
+    "chapter": "ACM CODE OF ETHICS",
     "code": "",
-    "tags": ""
+    "tags": "",
+    "position": "1075,175"
   },
   {
     "name": "Credits",
     "title": "Sources and credits",
-    "body": "<p>Pictures: linked below each image.</p><p><a href=\"https://mixkit.co/free-sound-effects/office/\" target=\"_blank\" rel=\"noopener\">Sound: Mixkit office ambience and typing</a></p>",
+    "body": "<p><strong>Created for CMPT 376W G1 by Team 24:</strong><br>Edward Lu<br>Oak Soe Khant<br>Wonchan Kim</p><p>Story inspiration: <a href=\"https://ethics.acm.org/code-of-ethics/using-the-code/case-dark-ux-patterns/\" target=\"_blank\" rel=\"noopener\">ACM Dark UX Patterns case study</a>.</p><p>Images are credited beneath each scene. Optional sound effects — office ambience, keyboard typing, small-group applause, light rain, urban traffic, and a positive notification — are from <a href=\"https://mixkit.co/free-sound-effects/\" target=\"_blank\" rel=\"noopener\">Mixkit</a> under the <a href=\"https://mixkit.co/license/\" target=\"_blank\" rel=\"noopener\">Mixkit Sound Effects Free License</a>.</p><p>Amaze, its employees, its customers, and all events in this story are fictional.</p>",
     "links": "[[Return to the title screen->Start]]",
     "scene": "office",
-    "chapter": "",
+    "chapter": "CREDITS",
     "code": "",
-    "tags": ""
+    "tags": "",
+    "position": "25,175"
   }
 ]

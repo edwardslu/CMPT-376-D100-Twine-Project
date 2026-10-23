@@ -1,5 +1,5 @@
 :: StoryTitle
-Story name
+Just One More Delivery
 
 
 :: StoryData
@@ -8,161 +8,201 @@ Story name
   "format": "Harlowe",
   "format-version": "3.3.9",
   "start": "Start",
-  "zoom": 1
+  "zoom": 0.75
 }
 
 
-:: BadEnding1 {"position":"150,150","size":"100,100"}
+:: Start {"position":"25,25","size":"100,100"}
+(set: $route to "undecided")
+(set: $raisedConcern to false)
 (set: $clearDesign to false)
+<div class="passage-shell" data-scene="graduation" data-typing="false" data-cue=""><div class="scene-hero" role="img" aria-label="A graduation cap and diploma."></div><p class="photo-credit">Photo: <a href="https://www.pexels.com/photo/photo-of-person-holding-graduation-cap-and-diploma-7944064/" target="_blank" rel="noopener">Pavel Danilyuk / Pexels</a></p><div class="story-copy"><p class="kicker">01 / INTRODUCTION</p><h1>Just One More Delivery</h1><p class="deck">An interactive story about subscription design, workplace pressure, and professional responsibility.</p><p>You play as <strong>Alex</strong>, a recent graduate starting work at <strong>Amaze</strong>, a fictional online store. Your manager needs more repeat customers. Your customers need to understand what they are choosing.</p><div class="callout"><strong>How to play</strong><p>Read each scene and choose an action. There is no timer or score. Different choices reveal different consequences. Sound is optional; use the control above.</p></div><div class="credits-mini"><strong>CMPT 376W G1 · Team 24</strong><p>Edward Lu<br>Oak Soe Khant<br>Wonchan Kim</p><p>Inspired by the ACM Dark UX Patterns case study. All characters, company events, prices, and legal proceedings in this story are fictional.</p></div><div class="choices">
+[[Begin the story->Graduation]]
+[[Media and project credits->Credits]]
+</div></div></div>
+
+
+:: Graduation {"position":"175,25","size":"100,100"}
+<div class="passage-shell" data-scene="graduation" data-typing="false" data-cue=""><div class="scene-hero" role="img" aria-label="A graduation cap and diploma."></div><p class="photo-credit">Photo: <a href="https://www.pexels.com/photo/photo-of-person-holding-graduation-cap-and-diploma-7944064/" target="_blank" rel="noopener">Pavel Danilyuk / Pexels</a></p><div class="story-copy"><p class="kicker">02 / GRADUATION & EMPLOYMENT</p><h1>A place to start</h1><p>You have recently graduated and have been applying for jobs for several months. When Amaze offers you a junior developer position, the salary and stability feel like a doorway into the life you worked for.</p><p>On your first morning, Morgan, your software-development manager, walks you through the office.</p><blockquote>“We move quickly here. Show us you can deliver, and there’s room to grow.”</blockquote><p>You need this job to pay rent, your family is proud, and you want to prove that Amaze made the right choice.</p><div class="choices">
+[[Meet Morgan and review your first project->FirstProject]]
+</div></div></div>
+
+
+:: FirstProject {"position":"325,25","size":"100,100"}
+<div class="passage-shell" data-scene="office" data-typing="false" data-cue=""><div class="scene-hero" role="img" aria-label="An empty modern office at Amaze."></div><p class="photo-credit">Photo: <a href="https://www.pexels.com/photo/an-empty-office-5483236/" target="_blank" rel="noopener">cottonbro studio / Pexels</a></p><div class="story-copy"><p class="kicker">03 / FIRST PROJECT</p><h1>A discount, already selected</h1><p>Morgan opens the checkout for a $22 pack of household supplies. A green badge offers the same pack for <strong>$18 with Subscribe & Save</strong>.</p><p>The subscription option is selected before the customer touches the page. Smaller text says the item will arrive every month until cancelled.</p><div class="checkout" aria-label="Fictional checkout illustration"><span class="mini-label">AMAZE · CHECKOUT PREVIEW</span><strong>Household essentials</strong><div class="price">$18 <small>with Subscribe & Save</small></div><div class="selected-option">☑ Monthly subscription selected</div><p>$18 each delivery · repeats every month</p><div class="fake-button">Continue</div><span class="muted">One-time purchase: $22</span></div><blockquote>“Keep the subscription selected,” Morgan says. “Repeat orders make revenue predictable. That helps protect everyone’s jobs.”</blockquote><p>You ask whether customers will understand that the discount begins a recurring order. Morgan points at the terms.</p><blockquote>“It’s written there. This is standard optimization.”</blockquote><div class="choices">
+[[Accept without hesitation->Implementation]]
+[[Discuss the customer risks with Morgan->Debate]]
+[[Reject the project->BadEnding1]]
+</div></div></div>
+
+
+:: Debate {"position":"325,175","size":"100,100"}
 (set: $raisedConcern to true)
-<div class="passage-shell" data-scene="rain" data-typing="false"><div class="scene-hero" role="img" aria-label="Rain on a window overlooking city buildings."></div><p class="photo-credit">Photo: <a href="https://www.pexels.com/photo/wet-window-2181075/" target="_blank" rel="noopener">Rodrigo Jubram / Pexels</a></p><div class="story-copy"><p class="kicker"></p><h1>Back to the job search</h1><div class="choices">
-[[See the customer impact->Epilogue]]
-[[Start again->Start]]
+<div class="passage-shell" data-scene="office" data-typing="false" data-cue=""><div class="scene-hero" role="img" aria-label="An empty modern office at Amaze."></div><p class="photo-credit">Photo: <a href="https://www.pexels.com/photo/an-empty-office-5483236/" target="_blank" rel="noopener">cottonbro studio / Pexels</a></p><div class="story-copy"><p class="kicker">03 / DISCUSS THE REQUEST</p><h1>“It’s a choice they can change”</h1><p>You explain that a customer may notice the immediate discount but overlook the monthly commitment. Choosing a delivery frequency for someone is different from asking what they need.</p><p>Morgan listens, but does not agree.</p><blockquote>“Subscriptions can help people who rely on deliveries, including customers who find shopping in person difficult. We give them convenience and a lower price.”</blockquote><p>You agree that subscriptions can be useful, but argue that usefulness does not justify hiding the commitment.</p><blockquote>“You’re new,” Morgan says. “Take a smaller project for now. We’ll revisit this.”</blockquote><div class="choices">
+[[Take the smaller project->SmallerProject]]
 </div></div></div>
 
 
-:: BadEnding2 {"position":"275,150","size":"100,100"}
-(set: $clearDesign to false)
-(set: $raisedConcern to true)
-<div class="passage-shell" data-scene="rain" data-typing="false"><div class="scene-hero" role="img" aria-label="Rain on a window overlooking city buildings."></div><p class="photo-credit">Photo: <a href="https://www.pexels.com/photo/wet-window-2181075/" target="_blank" rel="noopener">Rodrigo Jubram / Pexels</a></p><div class="story-copy"><p class="kicker"></p><h1>A place on the sidelines</h1><div class="choices">
-[[See the customer impact->Epilogue]]
-[[Start again->Start]]
-</div></div></div>
-
-
-:: ClearRedesign [typing] {"position":"1150,25","size":"100,100"}
-(set: $clearDesign to true)
-<div class="passage-shell" data-scene="office" data-typing="true"><div class="scene-hero" role="img" aria-label="An empty modern office at Amaze."></div><p class="photo-credit">Photo: <a href="https://www.pexels.com/photo/an-empty-office-5483236/" target="_blank" rel="noopener">cottonbro studio / Pexels</a></p><div class="story-copy"><p class="kicker"></p><h1>Make the commitment clear</h1><div class="choices">
-[[See Jamie’s experience->Epilogue]]
-</div></div></div>
-
-
-:: Credits {"position":"650,150","size":"100,100"}
-<div class="passage-shell" data-scene="office" data-typing="false"><div class="scene-hero" role="img" aria-label="An empty modern office at Amaze."></div><p class="photo-credit">Photo: <a href="https://www.pexels.com/photo/an-empty-office-5483236/" target="_blank" rel="noopener">cottonbro studio / Pexels</a></p><div class="story-copy"><p class="kicker"></p><h1>Sources and credits</h1><p>Pictures: linked below each image.</p><p><a href="https://mixkit.co/free-sound-effects/office/" target="_blank" rel="noopener">Sound: Mixkit office ambience and typing</a></p><div class="choices">
-[[Return to the title screen->Start]]
-</div></div></div>
-
-
-:: Debate {"position":"400,25","size":"100,100"}
-(set: $raisedConcern to true)
-<div class="passage-shell" data-scene="office" data-typing="false"><div class="scene-hero" role="img" aria-label="An empty modern office at Amaze."></div><p class="photo-credit">Photo: <a href="https://www.pexels.com/photo/an-empty-office-5483236/" target="_blank" rel="noopener">cottonbro studio / Pexels</a></p><div class="story-copy"><p class="kicker">03 / THE OBJECTION</p><h1>“It’s a choice they can change”</h1><p>You explain that a customer may see an immediate discount and overlook the monthly commitment. Choosing a delivery frequency for someone is different from asking what they need.</p><p>Morgan listens, but does not agree.</p><blockquote>“Subscriptions can help people who rely on deliveries, including customers who find shopping in person difficult. We give them convenience and a lower price.”</blockquote><p>You agree that subscriptions can be useful. You suggest letting customers choose whether to subscribe and how often they receive an item.</p><blockquote>“You’re new,” Morgan says. “Take a smaller project for now. We’ll revisit this.”</blockquote><div class="choices">
-[[Take the smaller project while keeping your concern on record->SmallerProject]]
-[[Agree to implement Sub and Save after the discussion->Implementation]]
-</div></div></div>
-
-
-:: Epilogue {"position":"400,150","size":"100,100"}
-<div class="passage-shell" data-scene="deliveries" data-typing="false"><div class="scene-hero" role="img" aria-label="A delivery van filled with cardboard parcels."></div><p class="photo-credit">Photo: <a href="https://www.pexels.com/photo/brown-cardboard-boxes-inside-the-van-6169662/" target="_blank" rel="noopener">Tima Miroshnichenko / Pexels</a></p><div class="story-copy"><p class="kicker"></p><h1>Jamie’s next order</h1>(if: $clearDesign is true)[<h2>Ending: Jamie can choose and cancel easily</h2>](else:)[<h2>Ending: Jamie receives another unwanted order</h2>]<div class="choices">
-[[Play again and explore another path->Start]]
-[[Read the ACM connections->Ethics]]
-[[Picture and sound references->Credits]]
-</div></div></div>
-
-
-:: Ethics {"position":"525,150","size":"100,100"}
-<div class="passage-shell" data-scene="office" data-typing="false"><div class="scene-hero" role="img" aria-label="An empty modern office at Amaze."></div><p class="photo-credit">Photo: <a href="https://www.pexels.com/photo/an-empty-office-5483236/" target="_blank" rel="noopener">cottonbro studio / Pexels</a></p><div class="story-copy"><p class="kicker"></p><h1>Professional responsibility</h1><div class="choices">
-[[Return to Jamie’s epilogue->Epilogue]]
-[[Start a fresh playthrough->Start]]
-</div></div></div>
-
-
-:: FirstProject {"position":"275,25","size":"100,100"}
-<div class="passage-shell" data-scene="office" data-typing="false"><div class="scene-hero" role="img" aria-label="An empty modern office at Amaze."></div><p class="photo-credit">Photo: <a href="https://www.pexels.com/photo/an-empty-office-5483236/" target="_blank" rel="noopener">cottonbro studio / Pexels</a></p><div class="story-copy"><p class="kicker">02 / THE FIRST REQUEST</p><h1>A discount, already selected</h1><p>Morgan opens the checkout for a $22 pack of household supplies. A green badge offers the same pack for <strong>$18 with Sub and Save</strong>.</p><p>The subscription option is selected before the customer touches the page. The smaller text says the item will arrive every month until cancelled.</p><div class="checkout" aria-label="Fictional checkout illustration"><span class="mini-label">AMAZE · CHECKOUT PREVIEW</span><strong>Household essentials</strong><div class="price">$18 <small>with Sub and Save</small></div><div class="selected-option">☑ Monthly subscription selected</div><p>$18 each delivery · repeats every month</p><div class="fake-button">Continue</div><span class="muted">One-time purchase: $22</span></div><blockquote>“Keep the subscription selected,” Morgan says. “Repeat orders make revenue predictable. That helps protect everyone’s jobs.”</blockquote><p>You ask whether customers will realize the discount means signing up. Morgan points at the terms.</p><blockquote>“It’s written there. This is standard optimization.”</blockquote><div class="choices">
-[[Accept the project without raising an objection->Implementation]]
-[[Question the design and discuss the customer risks->Debate]]
-[[Refuse to build this checkout->BadEnding1]]
-</div></div></div>
-
-
-:: Graduation {"position":"150,25","size":"100,100"}
-<div class="passage-shell" data-scene="graduation" data-typing="false"><div class="scene-hero" role="img" aria-label="A graduation cap and diploma."></div><p class="photo-credit">Photo: <a href="https://www.pexels.com/photo/photo-of-person-holding-graduation-cap-and-diploma-7944064/" target="_blank" rel="noopener">Pavel Danilyuk / Pexels</a></p><div class="story-copy"><p class="kicker">01 / A PLACE TO START</p><h1>The offer</h1><p>You have recently graduated and have been applying for jobs for several months.</p><p>Amaze offers you a junior developer position. You accept because you need a steady income and want work experience.</p><p>On your first morning, Morgan, your software-development manager, walks you through the office.</p><blockquote>“We move quickly here. Show us you can deliver, and there’s room to grow.”</blockquote><p>You need this job to pay rent, and your family is happy that you found work.</p><p>You want to do well in your new role.</p><div class="choices">
-[[Meet Morgan and see your first project->FirstProject]]
-</div></div></div>
-
-
-:: HardCancellation [typing] {"position":"775,25","size":"100,100"}
-<div class="passage-shell" data-scene="deliveries" data-typing="true"><div class="scene-hero" role="img" aria-label="A delivery van filled with cardboard parcels."></div><p class="photo-credit">Photo: <a href="https://www.pexels.com/photo/brown-cardboard-boxes-inside-the-van-6169662/" target="_blank" rel="noopener">Tima Miroshnichenko / Pexels</a></p><div class="story-copy"><p class="kicker">06 / THE CUSTOMER EXPERIENCE</p><h1>Easy to enter. Hard to leave.</h1><p>You move cancellation away from the edit-subscription screen. Customers can change quantity and frequency there, but must open each item individually to stop deliveries.</p><p>The monthly default remains. Morgan calls the lower cancellation rate an improvement.</p><p>Jamie receives another pack. On the account page, he changes the quantity before realizing that doing so does not stop the subscription. He opens another menu, then another.</p><blockquote>“Why can’t I just cancel this?”</blockquote><p>The company reports better retention, but Jamie has paid for an order he did not want.</p><div class="choices">
-[[Continue to the consequences->Lawsuit]]
-</div></div></div>
-
-
-:: Implementation [typing] {"position":"650,25","size":"100,100"}
-<div class="passage-shell" data-scene="office" data-typing="true"><div class="scene-hero" role="img" aria-label="An empty modern office at Amaze."></div><p class="photo-credit">Photo: <a href="https://www.pexels.com/photo/an-empty-office-5483236/" target="_blank" rel="noopener">cottonbro studio / Pexels</a></p><div class="story-copy"><p class="kicker">05 / ONE MORE CHANGE</p><h1>The numbers look good</h1><p>You build the checkout. Sub and Save is selected by default and the delivery interval begins at one month.</p><p>Before release, Taylor, the product lead, arranges a short customer test. Jamie, a volunteer customer, selects Continue.</p><blockquote>“Eighteen dollars for this order. That works for me.”</blockquote><p>When Taylor asks about the next delivery, Jamie pauses.</p><blockquote>“Next delivery? I only wanted one.”</blockquote><p>You share the result with Morgan. Morgan decides to proceed, saying customers can change the settings.</p><p>After launch, recurring orders increase. Morgan praises your speed. Then comes another request.</p><blockquote>“The higher-ups want better retention. Put cancellation deeper in account settings. Make customers open each subscription separately. Keep the edit screen for quantity and frequency only.”</blockquote><p>You now have direct evidence that some customers misunderstand the commitment.</p><div class="choices">
-[[Implement the harder cancellation process->HardCancellation]]
-[[Refuse to add cancellation barriers->BadEnding2]]
-</div></div></div>
-
-
-:: Lawsuit {"position":"900,25","size":"100,100"}
-<div class="passage-shell" data-scene="rain" data-typing="false"><div class="scene-hero" role="img" aria-label="Rain on a window overlooking city buildings."></div><p class="photo-credit">Photo: <a href="https://www.pexels.com/photo/wet-window-2181075/" target="_blank" rel="noopener">Rodrigo Jubram / Pexels</a></p><div class="story-copy"><p class="kicker"></p><h1>Amaze faces scrutiny</h1><div class="choices">
-[[Join the review->ProductReview]]
-</div></div></div>
-
-
-:: LimitedRedesign {"position":"25,150","size":"100,100"}
-(set: $clearDesign to false)
-<div class="passage-shell" data-scene="office" data-typing="false"><div class="scene-hero" role="img" aria-label="An empty modern office at Amaze."></div><p class="photo-credit">Photo: <a href="https://www.pexels.com/photo/an-empty-office-5483236/" target="_blank" rel="noopener">cottonbro studio / Pexels</a></p><div class="story-copy"><p class="kicker"></p><h1>The same route, new wording</h1><div class="choices">
-[[See Jamie’s experience->Epilogue]]
-</div></div></div>
-
-
-:: ProductReview {"position":"1025,25","size":"100,100"}
-<div class="passage-shell" data-scene="office" data-typing="false"><div class="scene-hero" role="img" aria-label="An empty modern office at Amaze."></div><p class="photo-credit">Photo: <a href="https://www.pexels.com/photo/an-empty-office-5483236/" target="_blank" rel="noopener">cottonbro studio / Pexels</a></p><div class="story-copy"><p class="kicker"></p><h1>What should change?</h1><div class="choices">
-[[Recommend explicit choice, remembered settings, and one-step cancellation->ClearRedesign]]
-[[Recommend wording changes while keeping the existing behavior->LimitedRedesign]]
-</div></div></div>
-
-
-:: SmallerProject {"position":"525,25","size":"100,100"}
-<div class="passage-shell" data-scene="office" data-typing="false"><div class="scene-hero" role="img" aria-label="An empty modern office at Amaze."></div><p class="photo-credit">Photo: <a href="https://www.pexels.com/photo/an-empty-office-5483236/" target="_blank" rel="noopener">cottonbro studio / Pexels</a></p><div class="story-copy"><p class="kicker">04 / THE PRESSURE</p><h1>The request returns</h1><p>You spend the next two weeks fixing product-page bugs. The work is useful, but Morgan repeatedly asks when you will take on Sub and Save.</p><blockquote>“We need people who take ownership,” Morgan says during your check-in. “If you won’t do it, another developer can. Or someone can use an AI tool to draft the code.”</blockquote><p>Your refusal alone will not prevent the launch. Agreeing would give you influence over implementation, but Morgan still wants the same default.</p><p>You must answer.</p><div class="choices">
+:: SmallerProject {"position":"475,175","size":"100,100"}
+<div class="passage-shell" data-scene="office" data-typing="false" data-cue=""><div class="scene-hero" role="img" aria-label="An empty modern office at Amaze."></div><p class="photo-credit">Photo: <a href="https://www.pexels.com/photo/an-empty-office-5483236/" target="_blank" rel="noopener">cottonbro studio / Pexels</a></p><div class="story-copy"><p class="kicker">04 / SMALLER PROJECT</p><h1>The request returns</h1><p>You spend the next two weeks fixing product-page bugs. The work is useful, but Morgan repeatedly asks when you will take on Subscribe & Save.</p><blockquote>“We need people who take ownership,” Morgan says during your check-in. “If you won’t do it, another developer can. Or someone can use an AI tool to draft the code.”</blockquote><p>Your refusal alone will not prevent the launch. Agreeing may give you some influence over implementation, but Morgan still wants the same default.</p><p>You must answer.</p><div class="choices">
 [[Relent and agree to implement it->Implementation]]
 [[Refuse the request again->BadEnding2]]
 </div></div></div>
 
 
-:: Start {"position":"25,25","size":"100,100"}
-(set: $raisedConcern to false)
+:: Implementation [typing] {"position":"625,25","size":"100,100"}
+(set: $route to "implementation")
+<div class="passage-shell" data-scene="office" data-typing="true" data-cue=""><div class="scene-hero" role="img" aria-label="An empty modern office at Amaze."></div><p class="photo-credit">Photo: <a href="https://www.pexels.com/photo/an-empty-office-5483236/" target="_blank" rel="noopener">cottonbro studio / Pexels</a></p><div class="story-copy"><p class="kicker">05 / IMPLEMENT SUBSCRIBE & SAVE</p><h1>The numbers look good</h1><p>You build the checkout. Subscribe & Save is selected by default and the delivery interval begins at one month.</p><p>Before release, Jamie, a volunteer customer, tries the design.</p><blockquote>“Eighteen dollars for this order. That works for me.”</blockquote><p>When the researcher asks about the next delivery, Jamie pauses.</p><blockquote>“Next delivery? I only wanted one.”</blockquote><p>You share the result with Morgan. Morgan proceeds, saying customers can change the settings. After launch, recurring orders increase and Morgan praises your speed. Then comes another request.</p><blockquote>“The higher-ups want better retention. Put cancellation deeper in account settings. Make customers open each subscription separately.”</blockquote><p>You now have direct evidence that some customers misunderstand the commitment.</p><div class="choices">
+[[Implement the harder cancellation process->HardCancellation]]
+[[Refuse to add cancellation barriers->BadEnding2]]
+[[Propose an ethical redesign backed by the customer test->EthicalRedesign]]
+</div></div></div>
+
+
+:: HardCancellation {"position":"775,25","size":"100,100"}
+(set: $route to "harmful")
+<div class="passage-shell" data-scene="deliveries" data-typing="false" data-cue=""><div class="scene-hero" role="img" aria-label="A delivery van filled with cardboard parcels."></div><p class="photo-credit">Photo: <a href="https://www.pexels.com/photo/brown-cardboard-boxes-inside-the-van-6169662/" target="_blank" rel="noopener">Tima Miroshnichenko / Pexels</a></p><div class="story-copy"><p class="kicker">05 / HARDER CANCELLATION</p><h1>Easy to enter. Hard to leave.</h1><p>You move cancellation away from the edit-subscription screen. Customers can change quantity and frequency there, but must open each item individually to stop deliveries.</p><p>The monthly default remains. Morgan calls the lower cancellation rate an improvement.</p><p>Jamie receives another pack. On the account page, he changes the quantity before realizing that doing so does not stop the subscription. He opens another menu, then another.</p><blockquote>“Why can’t I just cancel this?”</blockquote><p>The company reports better retention, but Jamie has paid for an order he did not want.</p><div class="choices">
+[[Continue to the consequences->Lawsuit]]
+</div></div></div>
+
+
+:: Lawsuit {"position":"925,25","size":"100,100"}
+(set: $route to "lawsuit")
 (set: $clearDesign to false)
-<div class="passage-shell" data-scene="graduation" data-typing="false"><div class="scene-hero" role="img" aria-label="A graduation cap and diploma."></div><p class="photo-credit">Photo: <a href="https://www.pexels.com/photo/photo-of-person-holding-graduation-cap-and-diploma-7944064/" target="_blank" rel="noopener">Pavel Danilyuk / Pexels</a></p><div class="story-copy"><p class="kicker">Introduction</p><h1>Story name<h1><p class="deck">An interactive story about subscription design.</p></h1><p>You play as <strong>Alex</strong>, a recent graduate starting work at <strong>Amaze</strong>, a fictional online store. Your manager needs more repeat customers. Your customers need to understand what they are choosing.</p><div class="callout"><strong>How to play</strong><p>Read each scene and choose an action. There is no timer or score. Different choices reveal different consequences. Sound is optional; use the control above.</p></div><div class="credits-mini"><strong>Team 24 · CMPT 376W G1</strong><p>Edward Lu — <em>role to confirm</em><br>Oak Soe Khant — <em>role to confirm</em><br>Wonchan Kim — <em>role to confirm</em></p><p>Based on ACM’s <a href="https://ethics.acm.org/code-of-ethics/using-the-code/case-dark-ux-patterns/" target="_blank" rel="noopener">Dark UX Patterns</a> case study. All characters, company events, prices, and legal proceedings in this story are fictional.</p></div><div class="choices">
-[[Begin the story->Graduation]]
-[[Media and project credits->Credits]]
+<div class="passage-shell" data-scene="rain" data-typing="false" data-cue=""><div class="scene-hero" role="img" aria-label="Rain on a window overlooking city buildings."></div><p class="photo-credit">Photo: <a href="https://www.pexels.com/photo/wet-window-2181075/" target="_blank" rel="noopener">Rodrigo Jubram / Pexels</a></p><div class="story-copy"><p class="kicker">07 / CONSUMER-PROTECTION LAWSUIT</p><h1>Amaze faces a consumer-protection lawsuit</h1><p>Months later, customer complaints become impossible to dismiss. People describe accidental subscriptions, repeated charges, and a cancellation process designed to wear them down.</p><p>A consumer-protection agency files a lawsuit alleging that Amaze used deceptive subscription practices. The company must preserve records, issue refunds, and defend decisions that once looked successful on a retention dashboard.</p><blockquote>“We measured how many people stayed,” Morgan says quietly. “We never measured how many felt trapped.”</blockquote><p>Alex realizes that implementing a requirement does not erase professional responsibility for its foreseeable harm.</p><div class="choices">
+[[See Jamie’s experience->EpilogueBad]]
+</div></div></div>
+
+
+:: EthicalRedesign [typing] {"position":"775,175","size":"100,100"}
+(set: $route to "ethical")
+(set: $clearDesign to true)
+<div class="passage-shell" data-scene="office" data-typing="true" data-cue=""><div class="scene-hero" role="img" aria-label="An empty modern office at Amaze."></div><p class="photo-credit">Photo: <a href="https://www.pexels.com/photo/an-empty-office-5483236/" target="_blank" rel="noopener">cottonbro studio / Pexels</a></p><div class="story-copy"><p class="kicker">06 / ETHICAL REDESIGN PROPOSAL</p><h1>Make the commitment clear</h1><p>You propose a redesign built around informed choice rather than accidental retention:</p><ul><li>One-time purchase and Subscribe & Save receive equal visual weight.</li><li>No option is preselected.</li><li>The price, delivery interval, and recurring commitment appear beside the choice.</li><li>Customers can cancel any subscription in one clear step.</li></ul><p>You present Jamie’s test result and recommend measuring comprehension, complaints, refunds, and cancellation time alongside conversion.</p><p>Morgan worries that enrolment will fall, but agrees to a controlled customer test. The redesign produces fewer accidental sign-ups and far fewer complaints. Leadership approves it.</p><blockquote>“Trust is also a business metric,” you say.</blockquote><div class="choices">
+[[See Jamie’s experience->EpilogueGood]]
+</div></div></div>
+
+
+:: BadEnding1 {"position":"325,325","size":"100,100"}
+(set: $route to "bad1")
+(set: $raisedConcern to true)
+(set: $clearDesign to false)
+<div class="passage-shell" data-scene="rain" data-typing="false" data-cue=""><div class="scene-hero" role="img" aria-label="Rain on a window overlooking city buildings."></div><p class="photo-credit">Photo: <a href="https://www.pexels.com/photo/wet-window-2181075/" target="_blank" rel="noopener">Rodrigo Jubram / Pexels</a></p><div class="story-copy"><p class="kicker">BAD ENDING 1</p><h1>Bad Ending 1: Back to the job search</h1><p>You refuse the project immediately and tell Morgan that you will not work on subscription features.</p><p>Morgan records that you declined your first major assignment without proposing an alternative or documenting the specific risks. During your probationary review, Amaze ends your employment.</p><p>Your concern about customers was valid, but the way you raised it gave the team no practical path forward. You leave the office with your badge in an envelope and begin applying for jobs again.</p><div class="choices">
+[[Start again and try another approach->Start]]
+[[Review the ACM connections->Ethics]]
+</div></div></div>
+
+
+:: BadEnding2 {"position":"625,325","size":"100,100"}
+(set: $route to "bad2")
+(set: $raisedConcern to true)
+(set: $clearDesign to false)
+<div class="passage-shell" data-scene="rain" data-typing="false" data-cue=""><div class="scene-hero" role="img" aria-label="Rain on a window overlooking city buildings."></div><p class="photo-credit">Photo: <a href="https://www.pexels.com/photo/wet-window-2181075/" target="_blank" rel="noopener">Rodrigo Jubram / Pexels</a></p><div class="story-copy"><p class="kicker">BAD ENDING 2</p><h1>Bad Ending 2: A place on the sidelines</h1><p>You refuse the request again. Morgan assigns Subscribe & Save to another developer and moves you to low-priority maintenance work.</p><p>Your concerns are not included in the project record, the harmful design still launches, and your performance review describes you as reluctant to take ownership. Months later, during a team restructuring, your position is eliminated.</p><p>You protected your conscience, but without evidence, allies, or a workable alternative, you could not protect the customers or your role.</p><div class="choices">
+[[Start again and try another approach->Start]]
+[[Review the ACM connections->Ethics]]
+</div></div></div>
+
+
+:: EpilogueGood {"position":"925,175","size":"100,100"}
+<div class="passage-shell" data-scene="deliveries" data-typing="false" data-cue="success"><div class="scene-hero" role="img" aria-label="A delivery van filled with cardboard parcels."></div><p class="photo-credit">Photo: <a href="https://www.pexels.com/photo/brown-cardboard-boxes-inside-the-van-6169662/" target="_blank" rel="noopener">Tima Miroshnichenko / Pexels</a></p><div class="story-copy"><p class="kicker">EPILOGUE A / GOOD ENDING</p><h1>Epilogue A: Jamie stays in control</h1><p>Jamie returns to Amaze to reorder household supplies. The page clearly separates <strong>One-time purchase</strong> from <strong>Subscribe & Save</strong>, with no default selected.</p><p>Jamie chooses the subscription after reading the delivery interval and later changes preferences from a single account screen. When the product is no longer needed, cancellation takes one click and produces an immediate confirmation.</p><blockquote>“That was easy,” Jamie says.</blockquote><p>Amaze earns a repeat customer without taking away the customer’s ability to choose.</p><div class="callout"><strong>Good Ending</strong><p>Alex used customer evidence to propose a practical design that supports both user autonomy and sustainable business goals.</p></div><div class="choices">
+[[Read the ACM connections->Ethics]]
+[[Play again and explore another path->Start]]
+[[View media and project credits->Credits]]
+</div></div></div>
+
+
+:: EpilogueBad {"position":"1075,25","size":"100,100"}
+<div class="passage-shell" data-scene="deliveries" data-typing="false" data-cue=""><div class="scene-hero" role="img" aria-label="A delivery van filled with cardboard parcels."></div><p class="photo-credit">Photo: <a href="https://www.pexels.com/photo/brown-cardboard-boxes-inside-the-van-6169662/" target="_blank" rel="noopener">Tima Miroshnichenko / Pexels</a></p><div class="story-copy"><p class="kicker">EPILOGUE B / CUSTOMER IMPACT</p><h1>Epilogue B: Jamie cannot find the exit</h1><p>Jamie opens the subscriptions page after receiving another unwanted delivery. The main screen allows quantity and frequency changes but provides no cancellation button.</p><p>After searching through several menus, Jamie finally finds cancellation inside the individual product page. A warning asks for confirmation, then offers another discount. Meanwhile, the next order has already been charged.</p><blockquote>“I never meant to sign up for this,” Jamie says while requesting a refund.</blockquote><p>Amaze gained a short-term repeat order and lost the customer’s trust.</p><div class="callout"><strong>Bad Epilogue</strong><p>The design met its retention target by making exit difficult. The lawsuit shows why success metrics must include foreseeable harm, informed consent, and user control.</p></div><div class="choices">
+[[Read the ACM connections->Ethics]]
+[[Play again and explore another path->Start]]
+[[View media and project credits->Credits]]
+</div></div></div>
+
+
+:: Ethics {"position":"1075,175","size":"100,100"}
+<div class="passage-shell" data-scene="office" data-typing="false" data-cue=""><div class="scene-hero" role="img" aria-label="An empty modern office at Amaze."></div><p class="photo-credit">Photo: <a href="https://www.pexels.com/photo/an-empty-office-5483236/" target="_blank" rel="noopener">cottonbro studio / Pexels</a></p><div class="story-copy"><p class="kicker">ACM CODE OF ETHICS</p><h1>Professional responsibility</h1><p>The story connects design decisions to the ACM Code of Ethics:</p><ul><li><strong>1.1 — Contribute to society and human well-being:</strong> Product goals should account for the people affected by the system.</li><li><strong>1.2 — Avoid harm:</strong> Accidental subscriptions, wasted money, and obstructed cancellation are foreseeable harms.</li><li><strong>1.3 — Be honest and trustworthy:</strong> A recurring commitment should be clear at the moment of choice.</li><li><strong>2.7 — Foster public awareness and understanding of computing:</strong> Teams should help customers understand how automated subscription defaults and cancellation flows affect their choices.</li><li><strong>3.1 — Keep the public good central:</strong> Leaders and developers share responsibility for measuring more than conversion and retention.</li></ul><p>Alex’s strongest response is not silent compliance or unsupported refusal. It is to identify the risk, collect evidence, explain the system’s effects clearly, propose a workable alternative, and keep user autonomy visible in the decision.</p><p><a href="https://www.acm.org/code-of-ethics" target="_blank" rel="noopener">Read the ACM Code of Ethics</a></p><div class="choices">
+[[Start a fresh playthrough->Start]]
+[[View media and project credits->Credits]]
+</div></div></div>
+
+
+:: Credits {"position":"25,175","size":"100,100"}
+<div class="passage-shell" data-scene="office" data-typing="false" data-cue=""><div class="scene-hero" role="img" aria-label="An empty modern office at Amaze."></div><p class="photo-credit">Photo: <a href="https://www.pexels.com/photo/an-empty-office-5483236/" target="_blank" rel="noopener">cottonbro studio / Pexels</a></p><div class="story-copy"><p class="kicker">CREDITS</p><h1>Sources and credits</h1><p><strong>Created for CMPT 376W G1 by Team 24:</strong><br>Edward Lu<br>Oak Soe Khant<br>Wonchan Kim</p><p>Story inspiration: <a href="https://ethics.acm.org/code-of-ethics/using-the-code/case-dark-ux-patterns/" target="_blank" rel="noopener">ACM Dark UX Patterns case study</a>.</p><p>Images are credited beneath each scene. Optional sound effects — office ambience, keyboard typing, small-group applause, light rain, urban traffic, and a positive notification — are from <a href="https://mixkit.co/free-sound-effects/" target="_blank" rel="noopener">Mixkit</a> under the <a href="https://mixkit.co/license/" target="_blank" rel="noopener">Mixkit Sound Effects Free License</a>.</p><p>Amaze, its employees, its customers, and all events in this story are fictional.</p><div class="choices">
+[[Return to the title screen->Start]]
 </div></div></div>
 
 
 :: StoryScript [script]
 (function(){
 'use strict';
-let enabled=false, activeShell=null, volume=0.22;
+let enabled=false, activeShell=null, volume=0.22, currentScene='', currentCue='';
 const onlinePreview=location.protocol!=='file:'&&/twinery\.org$/.test(location.hostname);
 const base=onlinePreview?'https://assets.mixkit.co/active_storage/sfx/':null;
-const ambience=new Audio(base?base+'447/447.wav':'assets/office-ambience.wav');
+const sceneAudio={
+ graduation:new Audio(base?base+'518/518.wav':'assets/graduation-applause.wav'),
+ office:new Audio(base?base+'447/447.wav':'assets/office-ambience.wav'),
+ deliveries:new Audio(base?base+'369/369.wav':'assets/delivery-traffic.wav'),
+ rain:new Audio(base?base+'2393/2393.wav':'assets/rain-loop.wav')
+};
 const typing=new Audio(base?base+'2531/2531.wav':'assets/typing.wav');
-ambience.loop=true;ambience.preload='none';typing.preload='none';
+const success=new Audio(base?base+'951/951.wav':'assets/success-notification.wav');
+const sceneLabels={graduation:'Graduation applause',office:'Office ambience',deliveries:'Delivery traffic',rain:'Rain ambience'};
+sceneAudio.graduation.loop=false;
+sceneAudio.office.loop=true;
+sceneAudio.deliveries.loop=true;
+sceneAudio.rain.loop=true;
+Object.values(sceneAudio).forEach(audio=>audio.preload='none');
+typing.preload='none';success.preload='none';
 let typingTimer;
 function init(){
  if(document.querySelector('.global-bar'))return;
- const bar=document.createElement('header');bar.className='global-bar';bar.innerHTML='<div class="brand">Story Name<small>CMPT 376W · Draft story flow</small></div><div class="global-controls"><button id="sound-toggle" type="button" aria-pressed="false">Sound: off</button><label>Volume <input id="sound-volume" type="range" min="0" max="100" value="22" aria-label="Sound volume"></label><button id="restart-story" type="button">Restart</button><span class="audio-status" aria-live="polite">Sound is optional</span></div>';document.body.prepend(bar);
+ const bar=document.createElement('header');bar.className='global-bar';bar.innerHTML='<div class="brand">Just One More Delivery<small>CMPT 376W · Team 24</small></div><div class="global-controls"><button id="sound-toggle" type="button" aria-pressed="false">Sound: off</button><label>Volume <input id="sound-volume" type="range" min="0" max="100" value="22" aria-label="Sound volume"></label><button id="restart-story" type="button">Restart</button><span class="audio-status" aria-live="polite">Sound is optional</span></div>';document.body.prepend(bar);
  const foot=document.createElement('footer');foot.className='global-footer';foot.innerHTML='<span>AMAZE</span> · A fictional adaptation of ACM’s Dark UX Patterns · Team 24';document.body.append(foot);
  document.querySelector('#sound-toggle').addEventListener('click',()=>{enabled=!enabled;document.querySelector('#sound-toggle').textContent='Sound: '+(enabled?'on':'off');document.querySelector('#sound-toggle').setAttribute('aria-pressed',String(enabled));syncAudio(true);});
- document.querySelector('#sound-volume').addEventListener('input',e=>{volume=Number(e.target.value)/100;ambience.volume=volume*.55;typing.volume=volume*.7;});
+ document.querySelector('#sound-volume').addEventListener('input',e=>{volume=Number(e.target.value)/100;setVolumes();});
  document.querySelector('#restart-story').addEventListener('click',()=>location.reload());
- document.addEventListener('visibilitychange',()=>{if(document.hidden){ambience.pause();typing.pause();}else syncAudio(false);});
+ document.addEventListener('visibilitychange',()=>{if(document.hidden)pauseAll();else syncAudio(false);});
  new MutationObserver(updateScene).observe(document.querySelector('tw-story')||document.body,{childList:true,subtree:true});updateScene();
 }
+function setVolumes(){
+ sceneAudio.graduation.volume=volume*.7;
+ sceneAudio.office.volume=volume*.5;
+ sceneAudio.deliveries.volume=volume*.45;
+ sceneAudio.rain.volume=volume*.5;
+ typing.volume=volume*.7;
+ success.volume=volume*.8;
+}
+function pauseAll(){
+ Object.values(sceneAudio).forEach(audio=>audio.pause());
+ typing.pause();success.pause();clearTimeout(typingTimer);
+}
 function syncAudio(userAction){
+ const scene=activeShell?activeShell.dataset.scene:'';
+ const cue=activeShell?activeShell.dataset.cue:'';
+ const sceneChanged=scene!==currentScene;
  clearTimeout(typingTimer);typing.pause();
- if(!enabled||document.hidden){ambience.pause();status(enabled?'Paused while away':'Sound is optional');return;}
- const isOffice=activeShell&&activeShell.dataset.scene==='office';
- if(isOffice){ambience.volume=volume*.55;ambience.play().then(()=>status('Office ambience')).catch(()=>status('Audio unavailable; story still works'));}
- else{ambience.pause();status('Sound on · quiet scene');}
- if(isOffice&&activeShell.dataset.typing==='true'){
-  typing.currentTime=0;typing.volume=volume*.7;typing.play().catch(()=>{});typingTimer=setTimeout(()=>typing.pause(),3500);
+ if(!enabled||document.hidden){pauseAll();status(enabled?'Paused while away':'Sound is optional');return;}
+ setVolumes();
+ Object.entries(sceneAudio).forEach(([name,audio])=>{
+  if(name!==scene){audio.pause();audio.currentTime=0;}
+ });
+ const background=sceneAudio[scene];
+ if(background){
+  if(sceneChanged||userAction)background.currentTime=0;
+  background.play().then(()=>status(sceneLabels[scene])).catch(()=>status('Audio unavailable; story still works'));
+ }else status('Sound on · quiet scene');
+ if(activeShell&&activeShell.dataset.typing==='true'){
+  typing.currentTime=0;typing.play().catch(()=>{});typingTimer=setTimeout(()=>typing.pause(),3500);
  }
+ if(cue==='success'&&(cue!==currentCue||userAction)){
+  success.currentTime=0;success.play().catch(()=>{});
+ }
+ currentScene=scene;currentCue=cue;
 }
 function status(s){const el=document.querySelector('.audio-status');if(el&&el.textContent!==s)el.textContent=s;}
 function updateScene(){const shells=document.querySelectorAll('tw-passage .passage-shell');const shell=shells[shells.length-1];if(!shell||shell===activeShell)return;activeShell=shell;document.body.dataset.scene=shell.dataset.scene;syncAudio(false);window.scrollTo({top:0,behavior:'instant'});}
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
 })();
+
 
 :: StoryStylesheet [stylesheet]
 :root{--scene-image:var(--photo-office)}
