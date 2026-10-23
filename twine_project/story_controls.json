@@ -1,0 +1,162 @@
+[
+  {
+    "name": "Start",
+    "title": "Just One More Delivery",
+    "body": "",
+    "links": "[[Begin the story->Graduation]]\n[[Picture and sound references->Credits]]",
+    "scene": "graduation",
+    "chapter": "",
+    "code": "(set: $raisedConcern to false)\n(set: $clearDesign to false)",
+    "tags": ""
+  },
+  {
+    "name": "Graduation",
+    "title": "The offer",
+    "body": "",
+    "links": "[[Meet Morgan and see your first project->FirstProject]]",
+    "scene": "graduation",
+    "chapter": "",
+    "code": "",
+    "tags": ""
+  },
+  {
+    "name": "FirstProject",
+    "title": "A discount, already selected",
+    "body": "",
+    "links": "[[Accept the project without raising an objection->Implementation]]\n[[Question the design and discuss the customer risks->Debate]]\n[[Refuse to build this checkout->BadEnding1]]",
+    "scene": "office",
+    "chapter": "",
+    "code": "",
+    "tags": ""
+  },
+  {
+    "name": "Debate",
+    "title": "\u201cIt\u2019s a choice they can change\u201d",
+    "body": "",
+    "links": "[[Take the smaller project while keeping your concern on record->SmallerProject]]\n[[Agree to implement Sub and Save after the discussion->Implementation]]",
+    "scene": "office",
+    "chapter": "",
+    "code": "(set: $raisedConcern to true)",
+    "tags": ""
+  },
+  {
+    "name": "SmallerProject",
+    "title": "The request returns",
+    "body": "",
+    "links": "[[Relent and agree to implement it->Implementation]]\n[[Refuse the request again->BadEnding2]]",
+    "scene": "office",
+    "chapter": "",
+    "code": "",
+    "tags": ""
+  },
+  {
+    "name": "Implementation",
+    "title": "The numbers look good",
+    "body": "",
+    "links": "[[Implement the harder cancellation process->HardCancellation]]\n[[Refuse to add cancellation barriers->BadEnding2]]",
+    "scene": "office",
+    "chapter": "",
+    "code": "",
+    "tags": "typing"
+  },
+  {
+    "name": "HardCancellation",
+    "title": "Easy to enter. Hard to leave.",
+    "body": "",
+    "links": "[[Continue to the consequences->Lawsuit]]",
+    "scene": "deliveries",
+    "chapter": "",
+    "code": "",
+    "tags": "typing"
+  },
+  {
+    "name": "Lawsuit",
+    "title": "Amaze faces scrutiny",
+    "body": "",
+    "links": "[[Join the review->ProductReview]]",
+    "scene": "rain",
+    "chapter": "",
+    "code": "",
+    "tags": ""
+  },
+  {
+    "name": "ProductReview",
+    "title": "What should change?",
+    "body": "",
+    "links": "[[Recommend explicit choice, remembered settings, and one-step cancellation->ClearRedesign]]\n[[Recommend wording changes while keeping the existing behavior->LimitedRedesign]]",
+    "scene": "office",
+    "chapter": "",
+    "code": "",
+    "tags": ""
+  },
+  {
+    "name": "ClearRedesign",
+    "title": "Make the commitment clear",
+    "body": "",
+    "links": "[[See Jamie\u2019s experience->Epilogue]]",
+    "scene": "office",
+    "chapter": "",
+    "code": "(set: $clearDesign to true)",
+    "tags": "typing"
+  },
+  {
+    "name": "LimitedRedesign",
+    "title": "The same route, new wording",
+    "body": "",
+    "links": "[[See Jamie\u2019s experience->Epilogue]]",
+    "scene": "office",
+    "chapter": "",
+    "code": "(set: $clearDesign to false)",
+    "tags": ""
+  },
+  {
+    "name": "BadEnding1",
+    "title": "Back to the job search",
+    "body": "",
+    "links": "[[See the customer impact->Epilogue]]\n[[Start again->Start]]",
+    "scene": "rain",
+    "chapter": "",
+    "code": "(set: $clearDesign to false)\n(set: $raisedConcern to true)",
+    "tags": ""
+  },
+  {
+    "name": "BadEnding2",
+    "title": "A place on the sidelines",
+    "body": "",
+    "links": "[[See the customer impact->Epilogue]]\n[[Start again->Start]]",
+    "scene": "rain",
+    "chapter": "",
+    "code": "(set: $clearDesign to false)\n(set: $raisedConcern to true)",
+    "tags": ""
+  },
+  {
+    "name": "Epilogue",
+    "title": "Jamie\u2019s next order",
+    "body": "(if: $clearDesign is true)[<h2>Ending: Jamie can choose and cancel easily</h2>](else:)[<h2>Ending: Jamie receives another unwanted order</h2>]",
+    "links": "[[Play again and explore another path->Start]]\n[[Read the ACM connections->Ethics]]\n[[Picture and sound references->Credits]]",
+    "scene": "deliveries",
+    "chapter": "",
+    "code": "",
+    "tags": ""
+  },
+  {
+    "name": "Ethics",
+    "title": "Professional responsibility",
+    "body": "",
+    "links": "[[Return to Jamie\u2019s epilogue->Epilogue]]\n[[Start a fresh playthrough->Start]]",
+    "scene": "office",
+    "chapter": "",
+    "code": "",
+    "tags": ""
+  },
+  {
+    "name": "Credits",
+    "title": "Sources and credits",
+    "body": "<p>Pictures: linked below each image.</p><p><a href=\"https://mixkit.co/free-sound-effects/office/\" target=\"_blank\" rel=\"noopener\">Sound: Mixkit office ambience and typing</a></p>",
+    "links": "[[Return to the title screen->Start]]",
+    "scene": "office",
+    "chapter": "",
+    "code": "",
+    "tags": ""
+  }
+]
