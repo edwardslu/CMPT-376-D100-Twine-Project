@@ -7,7 +7,7 @@ const controlsPath = path.join(root, "story_controls.json");
 const tweePath = path.join(root, "Twine_project.twee");
 const htmlPath = path.join(root, "Twine_project.html");
 
-const title = "Just One More Delivery";
+const title = "Subscribe & Pay";
 const ifid = "247B5902-16C6-4EF5-B45B-F2D6D963D17B";
 const controls = JSON.parse(fs.readFileSync(controlsPath, "utf8"));
 const previousTwee = fs.readFileSync(tweePath, "utf8").replace(/\r\n/g, "\n");
@@ -127,7 +127,7 @@ if (!storyDataPattern.test(htmlTemplate)) {
 }
 
 let generatedHtml = htmlTemplate.replace(storyDataPattern, storyMarkup);
-generatedHtml = generatedHtml.replace(/<title>[\s\S]*?<\/title>/, `<title>${title}</title>`);
+generatedHtml = generatedHtml.replace(/<title>[\s\S]*?<\/title>/, `<title>${escapeHtml(title)}</title>`);
 
 fs.writeFileSync(htmlPath, generatedHtml);
 console.log(`Built ${controls.length} passages with no broken links.`);
