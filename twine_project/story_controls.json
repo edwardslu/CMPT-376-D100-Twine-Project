@@ -157,7 +157,7 @@
   {
     "name": "Credits",
     "title": "Sources and credits",
-    "body": "<p><strong>Created for CMPT 376W G1 by Team 24:</strong><br>Edward Lu<br>Oak Soe Khant<br>Wonchan Kim</p><p>Story inspiration: <a href=\"https://ethics.acm.org/code-of-ethics/using-the-code/case-dark-ux-patterns/\" target=\"_blank\" rel=\"noopener\">ACM Dark UX Patterns case study</a>.</p><p>Images are credited beneath each scene. Optional sound effects — office ambience, keyboard typing, small-group applause, light rain, urban traffic, and a positive notification — are from <a href=\"https://mixkit.co/free-sound-effects/\" target=\"_blank\" rel=\"noopener\">Mixkit</a> under the <a href=\"https://mixkit.co/license/\" target=\"_blank\" rel=\"noopener\">Mixkit Sound Effects Free License</a>.</p><p>Amaze, its employees, its customers, and all events in this story are fictional.</p>",
+    "body": "<p><strong>Created for CMPT 376W G1 by Team 24:</strong><br>Edward Lu<br>Oak Soe Khant<br>Wonchan Kim</p><p>Story inspiration: <a href=\"https://ethics.acm.org/code-of-ethics/using-the-code/case-dark-ux-patterns/\" target=\"_blank\" rel=\"noopener\">ACM Dark UX Patterns case study</a>.</p><p>Images are credited beneath each scene. Sound effects are from <a href=\"https://mixkit.co/free-sound-effects/\" target=\"_blank\" rel=\"noopener\">Mixkit</a> and are used under the <a href=\"https://mixkit.co/license/\" target=\"_blank\" rel=\"noopener\">Mixkit Sound Effects Free License</a>.</p><p>Amaze, its employees, its customers, and all events in this story are fictional.</p>",
     "links": "[[Return to the title screen->Start]]",
     "scene": "office",
     "chapter": "CREDITS",
